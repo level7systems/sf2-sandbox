@@ -13,5 +13,5 @@ parameters:
     locale: en
     secret: SuperSecret
     debug_toolbar: true
-    debug_redirects: false
+    debug_redirects: true
     use_assetic_controller: false
