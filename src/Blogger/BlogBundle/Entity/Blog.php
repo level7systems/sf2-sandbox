@@ -10,23 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\HasLifecycleCallbacks
  */
 class Blog
-{
-    public function __construct()
-    {
-        $this->comments = new ArrayCollection();
-        
-        $this->setCreated(new \DateTime());
-        $this->setUpdated(new \DateTime());
-    }
-    
-    /**
-     * @ORM\PreUpdate
-     */
-    public function setUpdatedValue()
-    {
-       $this->setUpdated(new \DateTime());
-    }
-    
+{    
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -73,6 +57,22 @@ class Blog
      * @ORM\Column(type="datetime")
      */
     protected $updated;
+
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+        
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+    }
+    
+    /**
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedValue()
+    {
+       $this->setUpdated(new \DateTime());
+    }
 
     /**
      * Get id
@@ -247,5 +247,38 @@ class Blog
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Blogger\BlogBundle\Entity\Comment $comments
+     * @return Blog
+     */
+    public function addComment(\Blogger\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Blogger\BlogBundle\Entity\Comment $comments
+     */
+    public function removeComment(\Blogger\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

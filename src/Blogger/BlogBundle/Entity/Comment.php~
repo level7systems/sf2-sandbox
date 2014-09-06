@@ -1,5 +1,4 @@
 <?php
-// src/Blogger/BlogBundle/Entity/Comment.php
 
 namespace Blogger\BlogBundle\Entity;
 
@@ -11,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\HasLifecycleCallbacks
  */
 class Comment
-{
+{    
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -59,10 +58,12 @@ class Comment
     }
 
     /**
-     * @ORM\preUpdate
+     * @ORM\PreUpdate
      */
     public function setUpdatedValue()
     {
        $this->setUpdated(new \DateTime());
     }
 }
+
+
