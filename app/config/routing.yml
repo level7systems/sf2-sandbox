@@ -1,0 +1,4 @@
+level7_pdns:
+    resource: "@Level7PdnsBundle/Resources/config/routing.yml"
+    prefix:   /
+

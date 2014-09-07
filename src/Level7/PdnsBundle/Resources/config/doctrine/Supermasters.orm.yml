@@ -1,0 +1,26 @@
+Level7\PdnsBundle\Entity\Supermasters:
+    type: entity
+    table: supermasters
+    id:
+        ip:
+            type: string
+            nullable: false
+            length: 64
+            fixed: false
+            comment: ''
+            id: true
+        nameserver:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            id: true
+    fields:
+        account:
+            type: string
+            nullable: true
+            length: 40
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

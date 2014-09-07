@@ -1,0 +1,62 @@
+Level7\PdnsBundle\Entity\Comments:
+    type: entity
+    table: comments
+    indexes:
+        comments_domain_id_idx:
+            columns:
+                - domain_id
+        comments_name_type_idx:
+            columns:
+                - name
+                - type
+        comments_order_idx:
+            columns:
+                - domain_id
+                - modified_at
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        domainId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: domain_id
+        name:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        type:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            comment: ''
+        modifiedAt:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: modified_at
+        account:
+            type: string
+            nullable: false
+            length: 40
+            fixed: false
+            comment: ''
+        comment:
+            type: string
+            nullable: false
+            length: 64000
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

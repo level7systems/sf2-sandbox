@@ -1,0 +1,7 @@
+parameters:
+#    level7_pdns.example.class: Level7\PdnsBundle\Example
+
+services:
+#    level7_pdns.example:
+#        class: %level7_pdns.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

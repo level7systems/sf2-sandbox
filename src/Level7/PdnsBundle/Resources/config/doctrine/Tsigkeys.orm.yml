@@ -1,0 +1,37 @@
+Level7\PdnsBundle\Entity\Tsigkeys:
+    type: entity
+    table: tsigkeys
+    uniqueConstraints:
+        namealgoindex:
+            columns:
+                - name
+                - algorithm
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        algorithm:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        secret:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

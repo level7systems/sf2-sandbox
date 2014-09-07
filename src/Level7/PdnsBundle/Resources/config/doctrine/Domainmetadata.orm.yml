@@ -1,0 +1,37 @@
+Level7\PdnsBundle\Entity\Domainmetadata:
+    type: entity
+    table: domainmetadata
+    indexes:
+        domainmetadata_idx:
+            columns:
+                - domain_id
+                - kind
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        domainId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: domain_id
+        kind:
+            type: string
+            nullable: true
+            length: 32
+            fixed: false
+            comment: ''
+        content:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }
